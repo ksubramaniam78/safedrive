@@ -1,0 +1,16 @@
+<html>
+<head>
+    <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
+</head>
+<body>
+<form method="post" action="/event">
+    <p>{{scores}}</p>
+    <input type="hidden" name="_csrf" value={{csrfToken}} />
+    <p> Email: <input type="text" value="ksubramaniam@yahoo.com" name="email" />
+    <p> Lat: <input type="text" value="44.968046" name="lat" />
+    <p> Long: <input type="text" value="-94.420307" name="long" />
+    <p> Speed: <input type="text" value="70" name="speed" />
+    <button type="submit">Post</button>
+</form>
+</body>
+</html>

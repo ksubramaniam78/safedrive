@@ -1,0 +1,227 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Safe Drive</title>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/maximage.css">
+	<link rel="stylesheet" href="assets/css/spirito.css" />
+
+    <link rel="stylesheet" href="http://js.arcgis.com/3.12/dijit/themes/claro/claro.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.12/dojox/widget/ColorPicker/ColorPicker.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.12/esri/css/esri.css">
+
+	<script src="assets/js/modernizr.custom.min.js"></script>
+
+    <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
+
+</head>
+<body class="content-dark" data-color="turquoise">
+	<div id="loader">
+		<div class="logo-name">Safe Drive</div>
+			<div class="spinner">
+			  <div class="spinner-container container1">
+			    <div class="circle1"></div>
+			    <div class="circle2"></div>
+			    <div class="circle3"></div>
+			    <div class="circle4"></div>
+			  </div>
+			  <div class="spinner-container container2">
+			    <div class="circle1"></div>
+			    <div class="circle2"></div>
+			    <div class="circle3"></div>
+			    <div class="circle4"></div>
+			  </div>
+			  <div class="spinner-container container3">
+			    <div class="circle1"></div>
+			    <div class="circle2"></div>
+			    <div class="circle3"></div>
+			    <div class="circle4"></div>
+			  </div>
+			</div>
+	</div>
+	<div id="wrapper">
+		<header id="home">
+			<div id="maximage" class="maximage-slider">
+				<img src="assets/img/demo/bg_1.jpg" alt=""/>
+				<img src="assets/img/demo/bg_2.jpg" alt="" />
+			</div>
+			<div class="fullscreen-controls">
+				<a class="img-prev"></a>
+				<a class="img-next"></a>
+			</div>
+			<div class="pattern dark-overlay"></div>
+			<div class="home-wrapper">
+				<div class="logo">
+					<h1>Safe Drive</h1>
+				</div>
+				<div id="home-slider">
+					<div class="star-line">
+						<span class="line-pre"></span>
+						<span class="icons">
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+							<i class="glyphicon glyphicon-star"></i>
+						</span>
+						<span class="line-after"></span>
+					</div>
+					<ul class="bxslider">
+					  <li><h1>Identify Safe Drivers</h1></li>
+					  <li><h1>What's my driving score?</h1></li>
+					  <li><h1>Track my club drivers score</h1></li>
+					</ul>
+				</div>
+				<div class="buttons">
+					<a class="btn" href="#about" data-scroll="#about">Login</a>
+				</div>
+			</div>
+		</header>
+		<nav id="main" class="dark">
+			<div class="container">
+				<div class="logo">
+					<h1>Safe Drive</h1>
+				</div>
+				<div class="menu-trigger">
+					<a href="#"><i class="fa fa-bars"></i></a>
+				</div>
+				<ul>
+					<li class="active"><a href="#home">Home</a></li>
+					<li><a href="#about">Me</a></li>
+					<li><a href="#team">My Club</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>	
+			</div>	
+		</nav>
+		<section id="about">
+			<div class="container page">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 section-title" data-animate="fadeInLeft" data-delay="none">
+                        <ul class="list-group text-left">
+                        <li class="list-group-item">
+                            <h2><span class="glyphicon  glyphicon-ok-sign"></span> Safety Score  <span class="badge pull-right" style="font-size: 100%">85</span></h2>
+                        </li>
+                        <li class="list-group-item">
+                            <h2><span class="glyphicon  glyphicon-warning-sign"></span> Distractions #  <span class="badge pull-right distractions-me" style="font-size: 100%">36</span> </h2>
+                        </li>
+                        <li class="list-group-item">
+                            <h2><span class="glyphicon glyphicon-star-empty"></span> Hard Break  <span class="badge pull-right" style="font-size: 100%">10</span> </h2>
+                        </li>
+                        <li class="list-group-item">
+                            <h2><span class="glyphicon glyphicon-star-empty"></span> Seat Bealt Misses </span> <span class="badge pull-right" style="font-size: 100%">4</span> </h2>
+                        </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" data-animate="fadeInRight" data-delay="none">
+                        <div id="location-map">
+                            <div id="google-map-me" class="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</section>
+
+        <section id="team">
+            <div class="container page">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 section-title" data-animate="fadeInLeft" data-delay="none">
+                        <div class="list-group text-left">
+                            <a href="#team" class="list-group-item" style="background-color: lightgray">
+                                 <h2> Kumar S <span class="glyphicon glyphicon glyphicon-chevron-right pull-right text-right"></span> </h2>
+                            </a>
+                            <a href="#team" class="list-group-item">
+                                <h2> Sreejumon P</h2>
+                            </a>
+                            <a href="#team" class="list-group-item">
+                                <h2> David M </h2>
+                            </a>
+                            <a href="#team" class="list-group-item">
+                                <h2> Varada A </h2>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" data-animate="fadeInRight" data-delay="none">
+                        <div id="location-map">
+                            <div id="google-map-team-1" class="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+		<section id="contact">
+			<div class="container page">
+				<div class="section-title">
+					<h1 data-animate="fadeInDown" data-delay="none">Contact</h1>
+					<hr data-animate="fadeIn" data-delay="none" />
+					<p data-animate="fadeInDown" class="subheading">
+						You want to say hello, or you want to know more about us? Drop us an e-mail! We&nbsp;will be happy to answer you.
+					</p>
+				</div>
+				<form id="contact-form" name="contact-form" action="/" method="post">
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-offset-2 col-md-4 col-lg-offset-2 col-lg-4" data-animate="fadeInLeft" data-delay="none">
+							<div class="form-group">
+								<input class="form-control input-lg" type="text" name="" placeholder="Name" />
+							</div>
+							<div class="form-group">
+								<input class="form-control input-lg" type="text" name="" placeholder="E-mail" />
+							</div>
+							<div class="form-group">
+								<input class="form-control input-lg" type="text" name="" placeholder="Subject" />
+							</div>		
+						</div>
+						<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" data-animate="fadeInRight" data-delay="none">
+							<div class="form-group">
+								<textarea class="form-control" placeholder="Your message"></textarea>
+							</div>
+							<div class="form-group">
+								<input type="submit" class="btn btn-primary btn-lg btn-block" value="Submit" />
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+		<section id="location-map">
+			<div id="google-map" class="map"></div>
+		</section>
+		<footer>
+			<h3>Spirito</h3>
+		</footer>
+	</div>
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/waypoints.min.js"></script>
+	<script src="assets/js/waypoints.sticky.js"></script>
+	<script src="assets/js/jquery.nav.js"></script>
+	<script src="assets/js/jquery.scrollTo.min.js"></script>
+	<script src="assets/js/jquery.bxslider.min.js"></script>
+	<script src="assets/js/jquery.cycle.all.min.js"></script>
+	<script src="assets/js/jquery.mixitup.min.js"></script>
+	<script src="assets/js/jquery.appear.js"></script>
+	<script src="assets/js/jquery.maximage.min.js"></script>
+
+	<script src="assets/js/jquery.parallax.js"></script>
+	<script src="assets/js/spirito.js"></script>
+	<script src="assets/js/portfolio-grid.js"></script>
+    <script src="http://js.arcgis.com/3.12/"></script>
+	<script>
+		$(document).ready(function() {
+			Spirito.init().initSliders().initPortfolio().initMaps();
+			Grid.init();			
+
+			$(window).load(function(){
+				$('#loader .logo-name, #loader .spinner').fadeOut(200,function(){
+						$('#loader').fadeOut(700,function(){ 
+							$(this).remove(); 
+							$(window).trigger('scroll'); 
+						});
+				});				
+				Spirito.parallax();
+			});
+		});
+	</script>
+</body>
+</html>
